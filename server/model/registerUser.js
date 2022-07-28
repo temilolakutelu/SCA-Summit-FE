@@ -1,0 +1,47 @@
+const mongoose = require("mongoose");
+
+const { Schema } = mongoose;
+
+const usersSchema = new Schema({
+
+    firstName: {
+
+        type: String,
+
+        required: true,
+
+        lowerCase:true,
+        
+        trim: true
+        
+    },
+
+    firstName: {
+
+        type: String,
+
+        required: true,
+
+        lowerCase:true,
+        
+        trim: true
+        
+    },
+
+    email: {
+
+        type: String,
+
+        required: true,
+            
+        lowerCase:true,
+            
+        trim: true,
+
+        unique:true
+        
+    }
+    
+})
+
+module.exports.userRegistration = mongoose.model("userRegistration", usersSchema);
