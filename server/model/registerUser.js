@@ -16,7 +16,7 @@ const usersSchema = new Schema({
         
     },
 
-    firstName: {
+    lastName: {
 
         type: String,
 

@@ -22,8 +22,9 @@ module.exports.saveUserDetails = async (req, res) => {
             
         } else {
 
-            const saveDetails = await new userRegistration.save({ firstName, lastName, email})
-            console.log(hello);
+            const saveDetails = await new userRegistration.save()
+            
+            console.log(saveDetails);
 
             res.status(200).json(saveDetails)
 
