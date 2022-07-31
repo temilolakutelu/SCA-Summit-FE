@@ -9,7 +9,7 @@ const cors = require("cors");
 const { router } = require("./router/userRegistration.route");
 
 // setting the port number 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 // intializing the ap
 const app = express();
@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cors());
 
-app.use("api/register/user", router)
+app.use(router);
 
 // this returns a promise 
 mongoose.connect(process.env.CONNECTIONURL, {
@@ -30,8 +30,6 @@ mongoose.connect(process.env.CONNECTIONURL, {
     
     useUnifiedTopology: true
     
-}).then(() => app.listen(() => console.log(`server running on port : ${PORT}`)))
+}).then(() => app.listen(PORT,() => console.log(`server running on port : ${PORT}`)))
     
 .catch((error) => console.log(error.message));
-    
-y

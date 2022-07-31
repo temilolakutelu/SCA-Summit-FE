@@ -16,7 +16,7 @@ const usersSchema = new Schema({
         
     },
 
-    firstName: {
+    lastName: {
 
         type: String,
 
@@ -38,10 +38,8 @@ const usersSchema = new Schema({
             
         trim: true,
 
-        unique:true
-        
     }
     
-})
+},{timestamps:true})
 
 module.exports.userRegistration = mongoose.model("userRegistration", usersSchema);
