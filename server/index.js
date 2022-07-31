@@ -8,7 +8,7 @@ const cors = require("cors");
 const { router } = require("./router/userRegistration.route");
 
 // setting the port number 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 4000;
 
 // intializing the ap
 const app = express();
@@ -29,6 +29,6 @@ mongoose.connect(process.env.CONNECTIONURL, {
     
     useUnifiedTopology: true
     
-}).then(() => app.listen(() => console.log(`server running on port : ${PORT}`)))
+}).then(() => app.listen(PORT,() => console.log(`server running on port : ${PORT}`)))
     
 .catch((error) => console.log(error.message));
