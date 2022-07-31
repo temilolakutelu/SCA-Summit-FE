@@ -4,6 +4,6 @@ const { saveUserDetails } = require("../controller/user.controller");
 
 const router = express.Router();
 
-router.post("/api/register/user", saveUserDetails)
+router.post("/", saveUserDetails)
 
 module.exports = {router}
