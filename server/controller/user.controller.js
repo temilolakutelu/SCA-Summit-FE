@@ -13,7 +13,7 @@ module.exports.saveUserDetails = async (req, res) => {
     try {
 
         // destructing of data
-        const { firstName, lastName, email } = req.body;
+        const { firstName, lastName, email,message } = req.body;
         
         // checking if the input field are empty 
         if (!firstName) {
@@ -41,7 +41,7 @@ module.exports.saveUserDetails = async (req, res) => {
             } else {
 
                 //save the new user data into the database
-                const saveDetails = new userRegistration({ firstName, lastName, email })
+                const saveDetails = new userRegistration({ firstName, lastName, email,message })
             
                 
                 //save user database 
