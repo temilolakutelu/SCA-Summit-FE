@@ -14,6 +14,14 @@ code {
     monospace;
 }
 
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#btn{
+  margin-bottom: 8rem;
+}
 #btnbg {
 
   background-color: #B70569;
@@ -26,3 +34,34 @@ code {
   box-shadow: none;
  
 }
+
+#RegisterBtn {
+
+  color: #B70569;
+  border: none;
+
+}
+
+#RegisterBtn:focus{
+
+  box-shadow: none;
+ 
+}
+
+#navbarBg {
+
+  background-color: #B70569
+
+}
+
+#customtextarea {
+  resize: none;
+}
+
+#customtextarea:focus{
+    background-color:transparent;
+    box-shadow: none;
+
+
+}
+
