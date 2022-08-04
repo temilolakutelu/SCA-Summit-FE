@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import NavBar from "./components/Navbar";
 
 import Register from "./page/Register";
@@ -10,7 +11,8 @@ const App = () => {
       
       <NavBar/>
       <Register />
-      
+
+      <Footer/>
     </>
 
   )
