@@ -6,6 +6,30 @@ import reportWebVitals from './reportWebVitals';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+import axios from "axios";
+
+// axios
+axios.defaults.baseURL = 'http://localhost:4000/';
+axios.defaults.headers.common['Authorization'] = 'AUTH_TOKEN';
+axios.defaults.headers.post['Content-Type'] = 'application/json';
+// axios.defaults.withCredentials = true;
+
+// Add a request interceptor
+axios.interceptors.request.use(request => {
+  
+  // Do something before request is sent  
+  console.log('axios request : ', request);
+  return request;
+
+}, error => {
+  // Do something with request error
+
+  console.log(error);
+
+  return Promise.reject(error);
+
+});
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

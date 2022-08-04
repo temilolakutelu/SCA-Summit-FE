@@ -38,6 +38,16 @@ const usersSchema = new Schema({
             
         trim: true,
 
+    },
+
+    message: {
+
+        type: String,
+            
+        lowerCase:true,
+            
+        trim: true,
+
     }
     
 },{timestamps:true})

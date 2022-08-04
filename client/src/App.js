@@ -1,11 +1,20 @@
-import Register from "./page/Register"
+import NavBar from "./components/Navbar";
+
+import Register from "./page/Register";
 
 const App = () => {
+
   return (
+
     <>
-      <Register/>
+      
+      <NavBar/>
+      <Register />
+      
     </>
+
   )
+
 }
 
 export default App
