@@ -1,24 +1,34 @@
+// import { useState } from 'react';
+
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
-const ShowModal = (args) => {
+const ShowModal = ({open,close, children}) => {
     
-  const [modal, setModal] = useState(false);
+  // const [modal, setModal] = useState(false);
 
-  const toggle = () => setModal(!modal);
+  // const toggle = () => setModal(!modal);
+console.log(open);
+  if (!open) return null;
 
   return (
-    <div>
-      <Button color="danger" onClick={toggle}>Click Me</Button>
-      <Modal isOpen={modal} toggle={toggle} {...args}>
-        <ModalBody>
-          User has already been registered 
-        </ModalBody>
+    <>
+
+      <Modal>
+
+        <ModalBody>{children}</ModalBody>
+
         <ModalFooter>
-          <Button color="primary" onClick={toggle}>Ok</Button>
+
+          <Button color="primary" onClick={close}>Ok</Button>
+
         </ModalFooter>
+
       </Modal>
-    </div>
+
+    </>
+
   );
+
 }
 
 export default ShowModal;

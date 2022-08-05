@@ -13,6 +13,8 @@ import {
   Button,
 } from "reactstrap";
 
+import ShowModal from "../components/Modal";
+
 const Register = () => {
   const [firstName, setFirstName] = useState("");
 
@@ -29,6 +31,10 @@ const Register = () => {
   const [lastNameError, setLastNameError] = useState(""); //last name error
 
   const [emailError, setEmailError] = useState(""); //email name error
+
+
+  const [isOpen, setIsOpen] = useState(false);
+
 
   const SubmitForm = async (e) => {
     e.preventDefault();
@@ -63,9 +69,12 @@ const Register = () => {
 
         console.log(data, "data");
       } catch (error) {
-        console.log(error.response.data, " : errormessage");
+        console.log(error.response.data.message, " : errormessage");
 
-        setError("something went wrong");
+        if (error.response.data.message === "User has already been registered.") return setIsOpen(true) 
+          
+        setError("something went wrong")
+
       }
     }
   };
@@ -174,6 +183,9 @@ const Register = () => {
           </div>
         </Form>
       </Container>
+
+      <ShowModal open={isOpen} close={() => { setIsOpen(false) }}>usee</ShowModal> 
+      
     </>
   );
 };
