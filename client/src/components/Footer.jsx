@@ -1,6 +1,6 @@
-import logoImage from "../image/she-code-africa-logo.png";
-
 import { Container, List, ListGroupItem } from "reactstrap";
+
+import logoImage from "../image/she-code-africa-logo.png";
 
 const Footer = () => {
 

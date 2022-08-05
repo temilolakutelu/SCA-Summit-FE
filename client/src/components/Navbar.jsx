@@ -46,7 +46,7 @@ const NavBar = () => {
                 
             </Nav>
 
-            <Button color="light" id="RegisterBtn">Register</Button>
+            <Button color="light" id="RegisterBtn" href="signup">Register</Button>
 
        </Navbar> 
     );

@@ -1,25 +1,18 @@
-// import { useState } from 'react';
-
 import { Button, Modal, ModalBody, ModalFooter } from 'reactstrap';
 
 const ShowModal = ({open,close, children}) => {
-    
-  // const [modal, setModal] = useState(false);
-
-  // const toggle = () => setModal(!modal);
-console.log(open);
-  if (!open) return null;
 
   return (
+    
     <>
 
-      <Modal>
+      <Modal  isOpen={open} size="sm" >
 
-        <ModalBody>{children}</ModalBody>
+        <ModalBody className='text-center p-4'>{children}</ModalBody>
 
-        <ModalFooter>
+        <ModalFooter className='border-top-0'>
 
-          <Button color="primary" onClick={close}>Ok</Button>
+          <Button id="btnbg" className=' m-auto' onClick={close}>Ok</Button>
 
         </ModalFooter>
 

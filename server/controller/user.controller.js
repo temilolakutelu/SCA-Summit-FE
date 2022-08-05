@@ -12,23 +12,8 @@ module.exports.saveUserDetails = async (req, res) => {
 
     try {
 
-        // destructing of data
-        const { firstName, lastName, email,message } = req.body;
-        
-        // checking if the input field are empty 
-        if (!firstName) {
-            
-            res.json("please input your first name")
-
-        } else if (!lastName) {
-            
-            res.json("please input your last name")
-
-        } else if (!email) {
-
-            res.json("please input your email")
-            
-        } else {
+            // destructing of data
+            const { firstName, lastName, email,message } = req.body;
 
             // find an existing user using their email
             const existingUser = await userRegistration.findOne({ email })
@@ -36,7 +21,7 @@ module.exports.saveUserDetails = async (req, res) => {
             // if user has been registered already
             if (existingUser) {
             
-                res.status(400).json({ message: "User has already been registered." })
+                res.status(422).json({ message: "User has already been registered." })
 
             } else {
 
@@ -75,20 +60,19 @@ module.exports.saveUserDetails = async (req, res) => {
                 
                     });
     
-                    res.status(201).json(saveUser._id); // returns a user id
+                    res.status(201).json({message:"registration has been commpleted successfully"});
             
                 }
 
             }
             
            
-        }
         
     } catch (error) {
         
         console.log(error);
 
-        res.status(501).json(error)
+        res.status(500).json(error)
 
     }
 
