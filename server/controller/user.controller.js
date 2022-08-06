@@ -60,7 +60,7 @@ module.exports.saveUserDetails = async (req, res) => {
                 
                     });
     
-                    res.status(201).json({message:"registration has been commpleted successfully"});
+                    res.status(201).json({message:"success"});
             
                 }
 

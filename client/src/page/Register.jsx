@@ -6,6 +6,7 @@ import { Container, Form, Row, Col, FormGroup, Label, Input, Button } from "reac
 
 // modal impotation 
 import ShowModal from "../components/Modal";
+import SuccessMessage from "../components/SuccessMessage";
 
 const Register = () => {
   
@@ -26,6 +27,8 @@ const Register = () => {
   const [emailError, setEmailError] = useState(""); //email name error
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const [Success, setSuccess] = useState(false);
 
   const SubmitForm = async (e) => {
     
@@ -62,22 +65,30 @@ const Register = () => {
 
         };
 
-         await axios.post( `/api/register/user`, registrationDetails )
+         const Response = await axios.post( `/api/register/user`, registrationDetails )
 
-        // const { data } = Response;
-
-        // console.log(data, "data");
+        const { data } = Response;
 
         setFirstName("");
+
         setLastName("");
+
         setEmail("");
-        setMessage("")
+
+        setMessage("");
+
+        if (data.message.includes('success')) {
+          
+          return setSuccess(true)
+          
+        }
+
       } catch (error) {
         
-        if (error.response.data.message === "User has already been registered.") return setIsOpen(true) 
-          
-        setError("something went wrong")
+        if (error.response) setError("something went wrong")
 
+        if (error.response.data.message === "User has already been registered.")return setIsOpen(true)
+          
       }
 
     }
@@ -88,9 +99,13 @@ const Register = () => {
   return (
 
     <>
+      {/* success message modal */}
+      <SuccessMessage className="text-center" success={Success} isClose={() => { setSuccess(false) }} />
       
+      {/* user already exit modal  */}
       <ShowModal className="text-center" open={isOpen} close={() => { setIsOpen(false) }}>User has already been registered.</ShowModal> 
-      
+
+      {/* register title  */}
       <div className="text-center text-light pt-2 pb-3" id="navbarBg">
         
         <h1 className="fs-5">Register</h1>
@@ -101,12 +116,15 @@ const Register = () => {
 
       </div>
 
+      {/* form field  */}
       <Container>
         
         <Form autoComplete="off" className="mt-5 text-capitalize" onSubmit={SubmitForm}>
           
+          {/* first row for both first and last name  */}
           <Row>
 
+            {/* first name field  */}
             <Col md={6}>
 
               <FormGroup>
@@ -121,6 +139,7 @@ const Register = () => {
 
             </Col>
 
+            {/* last name field  */}
             <Col md={6}>
 
               <FormGroup>
@@ -137,8 +156,10 @@ const Register = () => {
 
           </Row>
 
+          {/* second row for email  */}
           <Row>
 
+            {/* email field  */}
             <Col md={6}>
 
               <FormGroup>
@@ -167,6 +188,7 @@ const Register = () => {
 
           </Row>
 
+          {/* message field  */}
           <Col md={6}>
 
             <FormGroup>
@@ -179,6 +201,7 @@ const Register = () => {
 
           </Col>
 
+          {/* button  */}
           <div className="position-relative mt-5" id="btn">
 
             <Button id="btnbg" className="position-absolute top-0 start-50  translate-middle w-50 py-3"> Submit</Button>
