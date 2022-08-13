@@ -4,7 +4,7 @@ export const Card = (props) => {
   return (
     <div className='cd'>
       <div className="ig">
-        <img src={props.pic} alt="Avatar" />
+        <img className="ig" src={props.pic} alt="Avatar" />
       </div>
       <div className="cont">
         <h5>Speaker</h5>
