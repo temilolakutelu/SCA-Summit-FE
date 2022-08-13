@@ -50,7 +50,7 @@ const Footer = () => {
 
           <hr />
 
-          <div className="text-center fs-6 my-3 ">All rights reserved. She codes africa . 2022 Designed by Sira and Iybosa</div>
+          <div className="text-center fs-6 my-3 ">All rights reserved. She codes africa . 2022 Designed by Sira and Iyobo</div>
 
         </Container>
 
