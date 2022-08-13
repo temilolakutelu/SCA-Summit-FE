@@ -16,8 +16,6 @@ const Register = () => {
 
   const [email, setEmail] = useState("");
 
-  const [message, setMessage] = useState("");
-
   const [error, setError] = useState();
 
   const [firstNameError, setFirstNameError] = useState(""); //first name error
@@ -61,8 +59,6 @@ const Register = () => {
 
           email,
 
-          message,
-
         };
 
          const Response = await axios.post( `/api/register/user`, registrationDetails )
@@ -74,8 +70,6 @@ const Register = () => {
         setLastName("");
 
         setEmail("");
-
-        setMessage("");
 
         if (data.message.includes('success')) {
           
@@ -117,15 +111,14 @@ const Register = () => {
       </div>
 
       {/* form field  */}
-      <Container>
+      <Container >
         
         <Form autoComplete="off" className="mt-5 text-capitalize" onSubmit={SubmitForm}>
           
           {/* first row for both first and last name  */}
-          <Row>
 
             {/* first name field  */}
-            <Col md={6}>
+            <Col md={12}>
 
               <FormGroup>
 
@@ -140,7 +133,7 @@ const Register = () => {
             </Col>
 
             {/* last name field  */}
-            <Col md={6}>
+            <Col md={12}>
 
               <FormGroup>
 
@@ -154,13 +147,8 @@ const Register = () => {
 
             </Col>
 
-          </Row>
-
-          {/* second row for email  */}
-          <Row>
-
             {/* email field  */}
-            <Col md={6}>
+            <Col md={12}>
 
               <FormGroup>
 
@@ -174,32 +162,6 @@ const Register = () => {
 
             </Col>
 
-            <Col md={6}>
-
-              <FormGroup>
-
-                <Label className="fw-bold">Lorem ipsum:</Label>
-
-                <Input placeholder="Lorem ipsum" type="text" id="customtextarea" className="p-2"/>
-                
-              </FormGroup>
-
-            </Col>
-
-          </Row>
-
-          {/* message field  */}
-          <Col md={6}>
-
-            <FormGroup>
-
-              <Label className="fw-bold">Message:</Label>
-
-              <Input placeholder="type your message in here" type="textarea" className="p-2" rows='10' id="customtextarea" value={message} onChange={(e) => setMessage(e.target.value)} />
-              
-            </FormGroup>
-
-          </Col>
 
           {/* button  */}
           <div className="position-relative mt-5" id="btn">

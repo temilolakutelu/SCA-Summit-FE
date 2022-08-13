@@ -178,9 +178,9 @@ tr:nth-child(even) td:nth-child(even) {
   margin-bottom: 100px;
 }
 
-caption {
+/* caption {
 
-}
+} */
 
 caption button:first-child {
   text-align: left;

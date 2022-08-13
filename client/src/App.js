@@ -6,6 +6,8 @@ import Register from "./page/Register";
 
 import Footer from "./components/Footer";
 
+import Home from './page/Home';
+
 const App = () => {
 
   return (
@@ -14,8 +16,11 @@ const App = () => {
       
       <BrowserRouter>
         
-      <NavBar/>
-      
+        <NavBar />
+        
+       
+        <Routes><Route index element = { <Home />}></Route></Routes>
+        
         <Routes><Route path='signup' element = {<Register />}></Route></Routes>
         
         <Footer />
