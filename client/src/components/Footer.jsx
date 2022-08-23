@@ -6,9 +6,9 @@ const Footer = () => {
 
   return (
 
-    <>
+    <div>
       
-      <footer className="bg-dark text-white py-4">
+      <footer className="bg-dark text-white py-4 footer">
 
         <Container className="d-flex justify-content-evenly align-items-center">
 
@@ -56,7 +56,7 @@ const Footer = () => {
 
       </footer>
 
-    </>
+    </div>
 
   )
 

@@ -29,7 +29,7 @@ export const Schedule = () => {
   };
   
   return (
-    <div className="schedule">
+    <div className="schedule" id="schedules">
       <div className="lt">
         <h4>SCHEDULE PLAN</h4>
         <h1>SUMMIT SCHEDULE</h1>

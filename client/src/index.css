@@ -65,6 +65,7 @@ input:focus {
 
 }
 
+
 /* lll */
 :root {
   --primary-main-pink: #b70569;
@@ -85,6 +86,75 @@ input:focus {
 .App {
   text-align: center;
   font-family: 'Inter', sans-serif;
+}
+/* Home */
+.home {
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('./image/home.png') no-repeat;
+  background-size: cover;
+  color: var(--primary-white);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.home div {
+  margin: 100px;
+}
+
+.home h4 {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.home h1 {
+  margin: 10px 100px;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.home p {
+  font-size: 10px;
+  font-weight: 200;
+  letter-spacing: 0.5px;
+}
+
+.home div span.details {
+  display: flex;
+  flex-direction: row;
+  margin: 0 auto;
+}
+
+.home h6 {
+  margin: 0 50px;
+  font-size: 10px;
+}
+
+.pink {
+ color: var(--primary-main-pink);
+}
+
+/* About */
+.about {
+  display: flex;
+  flex-direction: column;
+  margin: 100px;
+  text-align: center;
+}
+
+.about h5 {
+  font-size: 10px;
+  font-weight: 900;
+  color: var(--primary-main-pink);
+}
+
+.about h3 {
+  font-weight: 650;
+  margin: 10px 20px;
+}
+
+.about p {
+  text-align: justify;
+  color: var(--primary-grey);
 }
 
 /* Speakers */
@@ -113,7 +183,6 @@ input:focus {
 
 .wp {
   display: grid;
-  max-width: 1200px;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 20px;
@@ -194,7 +263,7 @@ button.bn::after {
 .schedule {
   display:flex;
   flex-direction:row;
-  margin: 60px 0;
+  margin: 30px 0;
 }
 
 .lt {
@@ -234,7 +303,7 @@ table td, table th {
 }
 
 tr td:nth-child(1) {
-  width: 150px;
+  width: 130px;
 }
 
 tr td:nth-child(2) {
@@ -285,8 +354,8 @@ caption button.bn:hover{
   }
 
   .cd {
-    margin: 50px;
-  }
+    margin: 50px;   
+  } 
 
   .lt {
     width: 30%;
@@ -343,7 +412,8 @@ caption button.bn:hover{
   }
 
   .schedule {
-    display: block;
+    display:flex;
+    flex-direction: column;
   }
 
   .lt {
@@ -351,7 +421,7 @@ caption button.bn:hover{
   }
 
   .rt{
-    width: 100%;
+    width: 90%;
   }
 
   caption button.bn {
@@ -364,6 +434,7 @@ caption button.bn:hover{
     font-size: 12px;
     text-align: justify;
     margin-top: 20px;
+    margin-left: 10px;
   }
   
   table td, table th {
@@ -371,9 +442,9 @@ caption button.bn:hover{
   }
   
   tr td:nth-child(1) {
-    width: 150px;
-    padding: 0;
-    margin: 0;
+    width: 120px;
+    padding: 10px;
+    margin-right: 0;
   }
   
   tr td:nth-child(2) {
@@ -402,5 +473,10 @@ caption button.bn:hover{
   .ig {
     height: 220px;
     width: 280px;
+  }
+  
+  caption button.bn {
+    width: 80px;
+    font-size: 12px;
   }
 }

@@ -10,7 +10,7 @@ export const Speakers = () => {
   };
 
   return (
-    <div className="speakers">
+    <div className="speakers" id="speakers">
       <div className="tle">SPEAKERS</div>
       <div className="hd">MEET THE SPEAKERS</div>
       <div className="wp">

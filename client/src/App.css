@@ -126,6 +126,7 @@ button::after {
   display:flex;
   flex-direction:row;
   margin-top: 100px;
+  background-color: var(--primary-white) !important;
 }
 
 .lt {
